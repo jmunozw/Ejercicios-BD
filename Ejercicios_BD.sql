@@ -14,10 +14,7 @@ SELECT * FROM MEMBERS ORDER BY MEMBER_DISCHARGE_DATE  DESC LIMIT 20
 SELECT * FROM MOVIES
 
 -- 6) Devuelve las películas del año 2000 en adelante que empiecen por la letra A.
-SELECT 
-		*
-FROM 
-		MOVIES
+SELECT * FROM MOVIES
 WHERE
 		YEAR (MOVIE_LAUNCH_DATE) >= 2000 AND
 		MOVIE_NAME LIKE 'A%';
@@ -30,7 +27,7 @@ SELECT 	* FROM 	ACTORS WHERE MONTH (ACTOR_BIRTH_DATE ) = 06
 SELECT * FROM ACTORS 
 WHERE 
 	MONTH (ACTOR_BIRTH_DATE) <> 06 AND 
-	ACTOR_DEAD_DATE IS NOT NULL
+	ACTOR_DEAD_DATE IS NULL
 
 
 -- 9) Devuelve el nombre y la edad de todos los directores menores o iguales de 50 años que estén vivos
