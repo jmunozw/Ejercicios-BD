@@ -36,7 +36,8 @@ WHERE
 -- 9) Devuelve el nombre y la edad de todos los directores menores o iguales de 50 años que estén vivos
 SELECT
 	DIRECTOR_NAME,
-	AGE
+	AGE,
+	DIRECTOR_DEAD_DATE
 FROM
 	(
 	SELECT
@@ -50,6 +51,15 @@ WHERE
 	AND DIRECTOR_DEAD_DATE IS NULL
 
 
--- 
-
-	
+-- 10) Devuelve el nombre y la edad de todos los actores menores de 50 años que hayan fallecido
+SELECT 
+	ACTOR_NAME,
+	AGE
+FROM (
+	SELECT 
+		ACTOR_NAME,
+		DATEDIFF(YEAR, ACTOR_BIRTH_DATE, TODAY())AS "AGE",
+		ACTOR_DEAD_DATE
+	FROM ACTORS)
+WHERE
+	AGE <= 50 AND ACTOR_DEAD_DATE IS NOT NULL
