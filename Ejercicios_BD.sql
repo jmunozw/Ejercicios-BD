@@ -36,8 +36,7 @@ WHERE
 -- 9) Devuelve el nombre y la edad de todos los directores menores o iguales de 50 años que estén vivos
 SELECT
 	DIRECTOR_NAME,
-	AGE,
-	DIRECTOR_DEAD_DATE
+	AGE
 FROM
 	(
 	SELECT
